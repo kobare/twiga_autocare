@@ -704,7 +704,7 @@ jQuery(function ($) {
             expiration: 30, // This is the default value, in days
             domain: window.location.hostname, // If you run the same cookie notice on all subdomains, define the main domain starting with a .
             implicit: true, // Accept cookies on page scroll automatically
-            statement: 'https://nexgen.codings.dev', // Link to your cookie statement page
+            statement: 'cookie_statement.html', // Link to your cookie statement page
             performance: ['JSESSIONID'], // Cookies in the performance category.
             analytics: ['ga'], // Cookies in the analytics category.
             marketing: ['SSID'] // Cookies in the marketing category.
