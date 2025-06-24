@@ -668,8 +668,27 @@ jQuery(function ($) {
     }
 })
 
+
 /*----------------------------------------------
-11. Cookie Notice
+11. Highlight Active Nav
+----------------------------------------------*/
+
+  // Get the current page's filename
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Get all nav links
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  navLinks.forEach(link => {
+    // Compare href of link with current page
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+
+/*----------------------------------------------
+12. Cookie Notice
 ----------------------------------------------*/
 
 jQuery(function ($) {
