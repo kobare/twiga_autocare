@@ -473,4 +473,35 @@
 </html>
 </body>
 
+<script>
+function overrideSwiperSpeed() {
+    const swiperContainer = document.querySelector('.swiper-container.min-slider');
+    
+    if (swiperContainer && swiperContainer.swiper) {
+        const swiper = swiperContainer.swiper;
+
+        // Set speed
+        swiper.params.speed = 1000;
+
+        // Set autoplay config and keep it running after user interaction
+        if (swiper.params.autoplay) {
+            swiper.params.autoplay.delay = 1000;
+            swiper.params.autoplay.disableOnInteraction = false;
+
+            // Restart autoplay to apply changes
+            if (swiper.autoplay) {
+                swiper.autoplay.stop();
+                swiper.autoplay.start();
+            }
+        }
+
+        console.log('Swiper speed and autoplay settings overridden');
+    }
+}
+
+// Run immediately and after short delay to catch late-initialized Swipers
+overrideSwiperSpeed();
+setTimeout(overrideSwiperSpeed, 100);
+</script>
+
 </html>
