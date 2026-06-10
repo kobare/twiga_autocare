@@ -304,8 +304,20 @@
       updateSlider();
     }
 
-    // Generate and initialize all sliders
-    generateSliders();
-    initSliders();
+    // Boot function that delays gallery initialization until sliderConfigs is available.
+    // It repeatedly checks every 100ms and only proceeds once data is loaded,
+    // preventing undefined errors and ensuring generateSliders() runs safely.
+    function bootGallery() {
+      if (!window.sliderConfigs || !window.sliderConfigs.length) {
+        setTimeout(bootGallery, 100);
+        return;
+      }
+
+      generateSliders();
+      initSliders();
+    }
+
+    bootGallery();    
+    
   });
 

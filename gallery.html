@@ -286,188 +286,104 @@
  <script src="assets/js/gallery-2.js"></script> 
 
 <script>
-    // Configuration for all sliders
-    const sliderConfigs = [
-      {
-        id: 'slider1',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/01/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/01/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/01/before/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/01/before/04.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/01/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/01/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/01/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/01/after/04.jpg', alt: 'missing image' }
-        ]
-      },
-      {
-        id: 'slider2',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/02/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/02/before/02.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/02/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/02/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/02/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/02/after/04.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/02/after/05.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/02/after/06.jpg', alt: 'missing image' }
-        ]
-      },
-      {
-        id: 'slider3',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/03/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/03/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/03/before/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/03/before/04.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/03/before/05.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/03/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/03/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/03/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/03/after/04.jpg', alt: 'missing image' }
-        ]
-      },
-      {
-        id: 'slider4',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/04/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/04/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/04/before/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/04/before/04.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/04/before/05.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/04/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/04/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/04/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/04/after/04.jpg', alt: 'missing image' }
-        ]
-      },
-      {
-        id: 'slider5',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/05/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/05/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/05/before/03.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/05/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/05/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/05/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/05/after/04.jpg', alt: 'missing image' }
-        ]
-      },
-      {
-        id: 'slider6',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/06/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/06/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/06/before/03.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/06/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/06/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/06/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/06/after/04.jpg', alt: 'missing image' }
-        ]
-      },
-      {
-        id: 'slider7',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/07/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/07/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/07/before/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/07/before/04.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/07/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/07/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/07/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/07/after/04.jpg', alt: 'missing image' }
-        ]
-      },
-      {
-        id: 'slider8',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/08/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/08/before/02.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/08/after/01.jpg', alt: 'missing image' }
-        ]
-      }, 
-      {
-        id: 'slider9',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/09/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/09/before/02.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/09/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/09/after/02.jpg', alt: 'missing image' }
-        ]
-      },      
-      {
-        id: 'slider10',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/10/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/10/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/10/before/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/10/before/04.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/10/before/05.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/10/after/01.jpg', alt: 'missing image' },
-        ]
-      },      
-      {
-        id: 'slider11',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/11/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/11/before/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/11/before/03.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/11/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/11/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/11/after/03.jpg', alt: 'missing image' }
-        ]
-      },      
-      {
-        id: 'slider12',
-        title: 'Vehicle Transformation',
-        before: [
-          { src: 'assets/images/gallery/12/before/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/12/before/02.jpg', alt: 'missing image' }
-        ],
-        after: [
-          { src: 'assets/images/gallery/12/after/01.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/12/after/02.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/12/after/03.jpg', alt: 'missing image' },
-          { src: 'assets/images/gallery/12/after/04.jpg', alt: 'missing image' }                    
-        ]
-      },                 
-      // Add more slider configurations as needed
-    ];
+  // ===============================
+  // SAFE IMAGE CHECKER
+  // ===============================
 
+  function imageExists(src) {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = src;
+    });
+  }
+
+  // ===============================
+  // LOAD IMAGES FROM FOLDER
+  // ===============================
+
+  async function loadImages(folder) {
+    const images = [];
+    let i = 1;
+
+    while (i < 100) {
+      const num = String(i).padStart(2, '0');
+      const src = `${folder}/${num}.jpg`;
+
+      const exists = await imageExists(src);
+      if (!exists) break;
+
+      images.push({
+        src,
+        alt: 'Vehicle image'
+      });
+
+      i++;
+    }
+
+    return images;
+  }
+
+  // ===============================
+  // BUILD SLIDER
+  // ===============================
+
+  async function buildSlider(id) {
+    const folder = String(id).padStart(2, '0');
+
+    return {
+      id: `slider${id}`,
+      title: 'Vehicle Transformation',
+      before: await loadImages(`assets/images/gallery/${folder}/before`),
+      after: await loadImages(`assets/images/gallery/${folder}/after`)
+    };
+  }
+
+  // ===============================
+  // SAFE INIT (NEVER BREAKS PAGE)
+  // ===============================
+
+  document.addEventListener("DOMContentLoaded", function() {
+
+    const sliderConfigs = [];
+    let i = 1;
+
+    function next() {
+
+      const id = String(i).padStart(2, '0');
+
+      const test = `assets/images/gallery/${id}/before/01.jpg`;
+
+      imageExists(test).then(exists => {
+
+        if (!exists || i > 50) {
+
+          // expose globally for gallery-2.js
+          window.sliderConfigs = sliderConfigs;
+
+          console.log("Sliders loaded:", sliderConfigs);
+
+          // trigger gallery if function exists
+          if (typeof generateSliders === "function") {
+            generateSliders(sliderConfigs);
+          }
+
+          return;
+        }
+
+        buildSlider(i).then(slider => {
+          sliderConfigs.push(slider);
+          i++;
+          next();
+        });
+
+      });
+
+    }
+
+    next();
+  });
 </script>
 </body>
 
