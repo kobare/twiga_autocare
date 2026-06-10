@@ -45,6 +45,9 @@
         const imgEl = document.createElement('img');
         imgEl.src = img.src;
         imgEl.alt = img.alt;
+        imgEl.loading = 'lazy';
+        imgEl.decoding = 'async';
+        
         
         slide.appendChild(imgEl);
         slider.appendChild(slide);
@@ -55,10 +58,13 @@
         const slide = document.createElement('div');
         slide.className = 'slide';
         slide.dataset.type = 'after';
-        
+
         const imgEl = document.createElement('img');
         imgEl.src = img.src;
         imgEl.alt = img.alt;
+        imgEl.loading = 'lazy';
+        imgEl.decoding = 'async';
+        
         
         slide.appendChild(imgEl);
         slider.appendChild(slide);
@@ -160,6 +166,25 @@
       wrapper.appendChild(slider);
       return wrapper;
     }
+    
+function appendSlider(config) {
+  const container = document.getElementById('slider-container');
+
+  let row = container.lastElementChild;
+
+  if (!row || row.children.length >= 2) {
+    row = document.createElement('div');
+    row.className = 'gallery-row';
+    container.appendChild(row);
+  }
+
+  const sliderWrapper = createSlider(config);
+
+  row.appendChild(sliderWrapper);
+
+  const slider = sliderWrapper.querySelector('.slider');
+  initSlider(slider);
+}    
 
     // Initialize all sliders
     function initSliders() {
@@ -303,21 +328,8 @@
       // Initialize
       updateSlider();
     }
-
-    // Boot function that delays gallery initialization until sliderConfigs is available.
-    // It repeatedly checks every 100ms and only proceeds once data is loaded,
-    // preventing undefined errors and ensuring generateSliders() runs safely.
-    function bootGallery() {
-      if (!window.sliderConfigs || !window.sliderConfigs.length) {
-        setTimeout(bootGallery, 100);
-        return;
-      }
-
-      generateSliders();
-      initSliders();
-    }
-
-    bootGallery();    
+    
+    window.appendSlider = appendSlider;   
     
   });
 

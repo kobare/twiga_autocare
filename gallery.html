@@ -341,39 +341,38 @@
   }
 
   // ===============================
-  // SAFE INIT (NEVER BREAKS PAGE)
+  // INCREMENTAL GALLERY LOADER
   // ===============================
 
   document.addEventListener("DOMContentLoaded", function() {
 
-    const sliderConfigs = [];
     let i = 1;
 
     function next() {
 
       const id = String(i).padStart(2, '0');
 
-      const test = `assets/images/gallery/${id}/before/01.jpg`;
+      const test =
+        `assets/images/gallery/${id}/before/01.jpg`;
 
       imageExists(test).then(exists => {
 
         if (!exists || i > 50) {
-
-          // expose globally for gallery-2.js
-          window.sliderConfigs = sliderConfigs;
-
-          console.log("Sliders loaded:", sliderConfigs);
-
-          // trigger gallery if function exists
-          if (typeof generateSliders === "function") {
-            generateSliders(sliderConfigs);
-          }
-
+          console.log("Gallery loading complete");
           return;
         }
 
         buildSlider(i).then(slider => {
-          sliderConfigs.push(slider);
+
+          console.log(
+            `Loaded gallery ${id}`
+          );
+
+          // Render immediately if gallery-2.js is ready
+          if (window.appendSlider) {
+            window.appendSlider(slider);
+          }
+
           i++;
           next();
         });
